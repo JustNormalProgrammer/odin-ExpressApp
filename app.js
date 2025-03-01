@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('node:path');
-
+require('dotenv').config();
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -38,6 +39,6 @@ app.get('/message/:id', (req, res) => {
     res.render('message', {id: id, message: messages[id]});
 })
 
-app.listen(8080, () => {
-    console.log("Port 8080 open");
+app.listen(port, () => {
+    console.log(`Connection open`);
 });
