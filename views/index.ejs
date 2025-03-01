@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Index page!</h1>
+    <div class="messageSection">
+        <% messages.forEach((message, index)=> { %>
+            <div class="messageWrapper">
+                <div class="message">
+                    <div class="user">
+                        <%= message.user %>
+                    </div>
+                    <div class="text">
+                        <%= message.text %>
+                    </div>
+                    <div class="date">
+                        <%= message.added.toDateString() %>
+                    </div>
+                </div>
+                <button class="details" onclick="redirect(<%= index %>)">See Message</button>
+            </div>
+            <% }); %>
+    </div>
+    <a href="/new">Add new message</a>
+
+    <script>
+        function redirect(index) {
+            window.location.href = `/message/${index}`;
+        }   
+    </script>
+</body>
+
+</html>
