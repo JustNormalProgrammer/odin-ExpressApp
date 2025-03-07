@@ -28,6 +28,10 @@ app.get('/message/:id', async (req, res) => {
     res.render('message', {message:message});
 })
 
+app.use((err, req, res, next) => {
+    res.status(500).send('Error');
+})
+
 app.listen(port, () => {
     console.log(`Connection open`);
 });
