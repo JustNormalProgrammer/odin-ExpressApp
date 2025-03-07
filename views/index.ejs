@@ -15,7 +15,7 @@
             <div class="messageWrapper">
                 <div class="message">
                     <div class="user">
-                        <%= message.user %>
+                        <%= message.author %>
                     </div>
                     <div class="text">
                         <%= message.text %>
@@ -24,7 +24,7 @@
                         <%= message.added.toDateString() %>
                     </div>
                 </div>
-                <button class="details" onclick="redirect(<%= index %>)">See Message</button>
+                <button class="details" onclick="redirect(<%= index+1 %>)">See Message</button>
             </div>
             <% }); %>
     </div>
